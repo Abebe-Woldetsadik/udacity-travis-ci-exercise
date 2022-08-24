@@ -10,21 +10,13 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker image
-          command: docker build -t simple_node:latest .
-          
-  publish-latest:
-    environment:
-      IMAGE_NAME: simple_node
-    docker:
-      - image: cimg/base:2022.05
-    steps:
-      - setup_remote_docker
-      - run:
-          name: Publish Docker Image to Docker Hub
           command: |
+            docker build -t simple_node:latest .
             echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
             docker tag simple_node:latest abebewoldetsadik/simple_node:latest
             docker push abebewoldetsadik/simple_node:latest
+          
+ 
 workflows:
   version: 2.1
   build-master:
