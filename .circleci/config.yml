@@ -10,7 +10,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker image
-          command: docker build -t simple_node:latest .
+          command: sudo docker build -t simple_node:latest .
           
   publish-latest:
     environment:
@@ -23,8 +23,8 @@ jobs:
           name: Publish Docker Image to Docker Hub
           command: |
             echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-            docker tag simple_node abebewoldetsadik/simple_node:latest
-            docker push abebewoldetsadik/simple_node:latest
+            sudo docker tag simple_node abebewoldetsadik/simple_node:latest
+            sudo docker push abebewoldetsadik/simple_node:latest
 workflows:
   version: 2
   build-master:
