@@ -10,7 +10,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker image
-          command: |
+          command:  |
             docker build -t simple_node:latest .
             echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
             docker tag simple_node:latest abebewoldetsadik/simple_node:latest
