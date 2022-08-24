@@ -16,7 +16,7 @@ jobs:
     environment:
       IMAGE_NAME: simple_node
     docker:
-      - image: abebewoldetsadik/simple_node:latest
+      - image: abebewoldetsadik/simple_node
     steps:
       - setup_remote_docker
       - run:
