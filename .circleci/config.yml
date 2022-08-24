@@ -24,6 +24,7 @@ jobs:
           command: |
             echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
             docker tag simple_node:latest abebewoldetsadik/simple_node:latest
+            docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
             docker push abebewoldetsadik/simple_node:latest
 workflows:
   version: 2.1
