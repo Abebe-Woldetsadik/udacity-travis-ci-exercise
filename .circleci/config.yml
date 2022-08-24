@@ -10,7 +10,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker image
-          command: sudo docker build -t simple_node:latest .
+          command: docker build -t simple_node:latest .
           
   publish-latest:
     environment:
