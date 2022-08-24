@@ -14,7 +14,7 @@ jobs:
           
   publish-latest:
     environment:
-      IMAGE_NAME: abebewoldetsadik/simple_node
+      IMAGE_NAME: simple_node
     docker:
       - image: cimg/base:2022.05
     steps:
