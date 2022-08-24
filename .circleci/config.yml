@@ -16,7 +16,7 @@ jobs:
     environment:
       IMAGE_NAME: simple_node
     docker:
-      - image: simple_node:local
+      - image: cimg/base:2022.05
     steps:
       - setup_remote_docker
       - run:
