@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     environment:
-      IMAGE_NAME: abebewoldetsadik/simple_node
+      IMAGE_NAME: simple-node
     docker:
       - image: cimg/base:2022.05
     steps:
@@ -10,10 +10,12 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker image
-          command: docker build -t $IMAGE_NAME:latest .
+          command: |
+          docker build -t $IMAGE_NAME:latest .
+          docker tag IMAGE_NAME abebewoldetsadik/simple_node:latest
   publish-latest:
     environment:
-      IMAGE_NAME: simple_node
+      IMAGE_NAME: abebewoldetsadik/simple_node
     docker:
       - image: circleci/buildpack-deps:stretch
     steps:
