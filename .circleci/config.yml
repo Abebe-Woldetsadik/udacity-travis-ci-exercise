@@ -16,7 +16,7 @@ jobs:
   — checkout
   — setup_remote_docker
  — run: 
- name: Publish Docker Image to Docker Hub
+ name: Deploy
  command: |
   echo “$DOCKER_PASSWORD” | docker login -u “$DOCKER_USERNAME” — password-stdin
   docker build -t $IMAGE_NAME .
